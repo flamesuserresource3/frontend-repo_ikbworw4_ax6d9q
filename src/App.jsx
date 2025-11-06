@@ -1,28 +1,35 @@
-import { useState } from 'react'
+import React from 'react'
+import Hero from './components/Hero'
+import HowItWorks from './components/HowItWorks'
+import Products from './components/Products'
+import ReviewsFAQFooter from './components/ReviewsFAQFooter'
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="font-sans bg-gradient-to-b from-white via-emerald-50/30 to-sky-50/40 text-[#2b2b2b]">
+      {/* Top bar */}
+      <header className="sticky top-0 z-50 backdrop-blur bg-white/70 border-b border-emerald-100">
+        <div className="container mx-auto px-6 h-16 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <span className="inline-flex h-8 w-8 rounded-full bg-gradient-to-tr from-emerald-400 to-sky-400" />
+            <span className="text-xl font-extrabold tracking-tight">Zylo Kids</span>
+          </div>
+          <nav className="hidden md:flex gap-6 text-sm text-[#5b5b5b]">
+            <a href="#how" className="hover:text-emerald-600">How it works</a>
+            <a href="#products" className="hover:text-emerald-600">Products</a>
+            <a href="#reviews" className="hover:text-emerald-600">Reviews</a>
+            <a href="#faq" className="hover:text-emerald-600">FAQ</a>
+          </nav>
+          <a href="#create" className="inline-flex items-center justify-center rounded-full bg-emerald-500 text-white text-sm font-semibold px-4 py-2 hover:bg-emerald-600 transition">Create Now</a>
         </div>
-      </div>
+      </header>
+
+      <main>
+        <Hero />
+        <HowItWorks />
+        <Products />
+        <ReviewsFAQFooter />
+      </main>
     </div>
   )
 }
-
-export default App
